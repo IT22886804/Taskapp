@@ -4,6 +4,7 @@ import android.content.DialogInterface
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.taskapp.Adapter.ToDoAdapter
@@ -34,6 +35,9 @@ class MainActivity : AppCompatActivity(), DialogCloseListener {
         tasksRecyclerView.adapter = tasksAdapter
 
         fab = findViewById(R.id.fab)
+
+        val itemTouchHelper = ItemTouchHelper(RecyclerItemTouchHelper(tasksAdapter))
+        itemTouchHelper.attachToRecyclerView(tasksRecyclerView)
 
         fab.setOnClickListener {
             AddNewTask.newInstance().show(supportFragmentManager, AddNewTask.TAG)

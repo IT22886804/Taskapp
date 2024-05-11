@@ -1,5 +1,6 @@
 package com.example.taskapp.Adapter
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -28,7 +29,7 @@ class ToDoAdapter(private val db: DatabaseHandler, private val activity: MainAct
         val item = todoList[position]
         holder.task.text = item.task
         holder.task.isChecked = item.status != 0
-        holder.task.setOnCheckedChangeListener { buttonView, isChecked ->
+        holder.task.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 db.updateStatus(item.id, 1)
             } else {
@@ -66,5 +67,9 @@ class ToDoAdapter(private val db: DatabaseHandler, private val activity: MainAct
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var task: CheckBox = view.findViewById(R.id.todoCheckBox)
+    }
+
+    fun getContext(): Context {
+        return activity
     }
 }
