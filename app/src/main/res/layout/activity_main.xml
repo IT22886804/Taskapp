@@ -30,7 +30,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_margin="32dp"
-        android:backgroundTint="@android:color/holo_green_dark"
+        android:backgroundTint="@color/colorPrimary"
         android:src="@drawable/baseline_add"/>
 
 </RelativeLayout>
