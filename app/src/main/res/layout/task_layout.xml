@@ -17,9 +17,9 @@
             android:id="@+id/todoCheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tool:text="This is an sample task inside the application."
+            android:buttonTint="@color/colorPrimary"
             android:paddingStart="8dp"
-            android:buttonTint="@android:color/holo_green_dark"/>
+            tool:text="This is an sample task inside the application." />
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
